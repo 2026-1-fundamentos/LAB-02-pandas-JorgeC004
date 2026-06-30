@@ -14,3 +14,16 @@ def pregunta_01():
     40
 
     """
+
+import pandas as pd
+
+
+def pregunta_01():
+
+    tabla = pd.read_csv("files/input/tbl0.tsv", sep="\t")
+
+    cantidad_filas = len(tabla)
+
+    return cantidad_filas
+
+print(pregunta_01())

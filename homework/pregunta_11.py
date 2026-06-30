@@ -22,3 +22,14 @@ def pregunta_11():
     38   38      d,e
     39   39    a,d,f
     """
+
+import pandas as pd
+
+def pregunta_11():
+     tabla = pd.read_csv("files/input/tbl1.tsv", sep="\t")
+     
+     tabla_agrupada = tabla.groupby("c0")["c4"].apply(lambda x: ",".join(sorted(x))).reset_index()
+     
+     return tabla_agrupada
+
+print(pregunta_11())
